@@ -1,0 +1,48 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "eslint --fix && nuxt dev -port",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
+    "@vee-validate/zod": "^4.13.1",
+    "dayjs": "^1.11.11",
+    "nuxt": "^3.12.2",
+    "pinia": "^2.1.7",
+    "vee-validate": "^4.13.1",
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3",
+    "vue3-toastify": "^0.2.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "@nuxt/eslint": "^0.3.13",
+    "@nuxt/types": "^2.18.1",
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "autoprefixer": "^10.4.19",
+    "daisyui": "^4.12.7",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-vue": "^9.27.0",
+    "postcss": "^8.4.38",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.3",
+    "vite-plugin-checker": "^0.7.1",
+    "vue-tsc": "^2.0.26"
+  }
+}
