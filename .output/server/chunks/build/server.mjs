@@ -658,27 +658,27 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-DhDs76sv.mjs').then((m) => m.default || m)
+    component: () => import('./index-Dv4X2r4K.mjs').then((m) => m.default || m)
   },
   {
     name: "login",
     path: "/login",
-    component: () => import('./login-BCklXwNj.mjs').then((m) => m.default || m)
+    component: () => import('./login-cyvR_jY4.mjs').then((m) => m.default || m)
   },
   {
     name: "profile",
     path: "/profile",
-    component: () => import('./profile-C6R91wsd.mjs').then((m) => m.default || m)
+    component: () => import('./profile-Br900PRL.mjs').then((m) => m.default || m)
   },
   {
     name: "settings",
     path: "/settings",
-    component: () => import('./settings-Cwlrj8gG.mjs').then((m) => m.default || m)
+    component: () => import('./settings-D67qs8iO.mjs').then((m) => m.default || m)
   },
   {
     name: "sign-up",
     path: "/sign-up",
-    component: () => import('./sign-up-DYxqng_R.mjs').then((m) => m.default || m)
+    component: () => import('./sign-up-DPWh8l5l.mjs').then((m) => m.default || m)
   }
 ];
 const _wrapIf = (component, props, slots) => {
@@ -1535,6 +1535,7 @@ const useAuthStore = defineStore("auth", {
       if (data.value) {
         alert("Поздравляем! Регистрация прошла успешно.");
       }
+      return data.value;
     },
     logUserOut() {
       const token = useCookie("token");
