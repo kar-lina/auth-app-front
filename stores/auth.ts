@@ -68,6 +68,7 @@ export const useAuthStore = defineStore("auth", {
       if (data.value) {
         alert("Поздравляем! Регистрация прошла успешно.");
       }
+      return data.value
     },
     logUserOut() {
       const token = useCookie("token"); // useCookie new hook in nuxt 3

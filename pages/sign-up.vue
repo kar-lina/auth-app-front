@@ -1,46 +1,28 @@
 <template>
   <div>
     <NuxtLayout name="auth">
-      <div class="p-10 text-center rounded-xl bg-white">
+      <div class="p-5 md:p-10 text-center rounded-xl bg-white">
         <h1 class="text-2xl mb-5">Добро пожаловать в AuthApp!</h1>
         <h2 class="text-lg mb-10">Для регистрации заполните форму ниже.</h2>
 
-        <form class="flex flex-col gap-8" @submit="onSubmit">
+        <form class="form flex flex-col gap-8" @submit="onSubmit">
           <label class="input input-bordered flex items-center gap-2">
             <IconsUser />
-            <input
-              v-model="name"
-              v-bind="nameAttrs"
-              type="text"
-              class="grow"
-              placeholder="Name"
-            />
+            <input v-model="name" v-bind="nameAttrs" type="text" class="grow" placeholder="Name" />
             <div class="w-[20%] text-xs text-error text-left">
               {{ errors.name }}
             </div>
           </label>
           <label class="input input-bordered flex items-center gap-2">
             <IconsEmail class="h-4 w-4" />
-            <input
-              v-model="email"
-              v-bind="emailAttrs"
-              type="email"
-              class="grow"
-              placeholder="Email"
-            />
+            <input v-model="email" v-bind="emailAttrs" type="email" class="grow" placeholder="Email" />
             <div class="w-[20%] text-xs text-error text-left">
               {{ errors.email }}
             </div>
           </label>
           <label class="input input-bordered flex items-center gap-2">
             <IconsPassword />
-            <input
-              v-model="password"
-              v-bind="passwordAttrs"
-              type="password"
-              class="grow"
-              placeholder="Password"
-            />
+            <input v-model="password" v-bind="passwordAttrs" type="password" class="grow" placeholder="Password" />
             <div class="w-[20%] text-xs text-error text-left">
               {{ errors.password }}
             </div>
@@ -69,9 +51,9 @@
   </div>
 </template>
 <script setup>
-import { useForm } from 'vee-validate';
-import { toTypedSchema } from '@vee-validate/zod';
-import { z } from 'zod';
+import { useForm } from "vee-validate";
+import { toTypedSchema } from "@vee-validate/zod";
+import { z } from "zod";
 const { signUpUser } = useAuth();
 const router = useRouter();
 
@@ -79,13 +61,13 @@ const schema = toTypedSchema(
   z
     .object({
       name: z.string().min(2),
-      email: z.string().nonempty().email(),
+      email: z.string().min(1).email(),
       password: z.string().min(4),
       confirmPassword: z.string().min(4),
     })
     .refine((data) => data.password === data.confirmPassword, {
       message: "Passwords don't match",
-      path: ['confirmPassword'], // path of error
+      path: ["confirmPassword"], // path of error
     }),
 );
 
@@ -95,15 +77,22 @@ const { errors, handleSubmit, defineField } = useForm({
 
 const onSubmit = handleSubmit(async (values) => {
   try {
-    signUpUser(values);
-    router.push('/login');
+    const isSignedUp = signUpUser(values);
+    if(isSignedUp) router.push("/login");
   } catch (error) {
-    console.log('error', error);
+    console.log("error", error);
   }
 });
 
-const [email, emailAttrs] = defineField('email');
-const [password, passwordAttrs] = defineField('password');
-const [confirmPassword, confirmPasswordAttrs] = defineField('confirmPassword');
-const [name, nameAttrs] = defineField('name');
+const [email, emailAttrs] = defineField("email");
+const [password, passwordAttrs] = defineField("password");
+const [confirmPassword, confirmPasswordAttrs] = defineField("confirmPassword");
+const [name, nameAttrs] = defineField("name");
 </script>
+<style>
+form label div {
+  @apply w-[80px] md:w-[140px] !flex-grow-0 !text-right  !text-[10px] md:text-xs;
+}
+form label input {
+}
+</style>

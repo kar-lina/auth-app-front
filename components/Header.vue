@@ -46,8 +46,8 @@
     </div>
     <div class="navbar-end">
       <div v-if="authenticated" class="avatar">
-        <nuxt-link to="/profile" class="w-10 overflow-hidden rounded-full">
-          <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        <nuxt-link to="/profile" class="w-10 h-10 overflow-hidden rounded-full">
+          <img src="https://images.pexels.com/photos/17410093/pexels-photo-17410093.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
         </nuxt-link>
       </div>
       <IconsLogo class="w-7 h-7 md:w-auto md:h-auto " v-else />

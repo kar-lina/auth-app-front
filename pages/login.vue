@@ -9,14 +9,14 @@
               <IconsEmail class="h-4 w-4" />
               <input tabindex="1" v-model="email" v-bind="emailAttrs" type="email" class="grow" placeholder="Email" autofocus="off"/>
             </label>
-            <div class="text-xs text-error text-left pl-4">{{ errors.email }}</div>
+            <div class="w-[20%] text-xs text-error text-left pl-4">{{ errors.email }}</div>
           </div>
           <div>
             <label class="input input-bordered flex items-center gap-2 mb-1">
               <IconsPassword />
               <input  tabindex="2" v-model="password" v-bind="passwordAttrs" type="password" class="grow" placeholder="Password" />
             </label>
-            <div class="text-xs text-error text-left pl-4">
+            <div class="w-[20%] text-xs text-error text-left pl-4">
               {{ errors.password }}
             </div>
           </div>

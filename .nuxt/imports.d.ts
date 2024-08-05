@@ -36,4 +36,5 @@ export { useDate } from '../composables/useDate';
 export { useToastStore } from '../stores/toast';
 export { useAuthStore } from '../stores/user';
 export { defineStore, acceptHMRUpdate, usePinia, storeToRefs } from '../node_modules/@pinia/nuxt/dist/runtime/composables';
+export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';
